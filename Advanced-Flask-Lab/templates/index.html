@@ -8,68 +8,83 @@
 	</head>
 	<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<!-- Wrapper -->     
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
+			<!-- Header -->
+			<header id="header">
+				<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
 
-            <h1>Description</h1>
-            <br>
-            <!-- About me button -->
-            <a href="#"><button style="color:white;width:40%" >More about me</button></a>
-            <!--  -->
-            <br> <br>
-						<ul class="icons">
-							<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
-							<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
-					</header>
+				<h1>Description</h1>
+				<img src= "{{image_link}}"/>
+				<h1>{{user_bio}}!</h1>
+				<br>
+				<!-- About me button -->
+				<a href="#"><button style="color:white;width:40%" >More about me</button></a>
+				<!--  -->
+				<br> <br>
+				<ul class="icons">
+					<li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
+					<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
+			</header>
 
-				<!-- Main -->
-					<section id="main">
+			<!-- Main -->
+			<section id="main">
 
-						<!-- Thumbnails -->
-							<section class="thumbnails">
-                
-                <div>
-                      <a href="">
-                        <img src="static/images/thumbs/01.jpg" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                
-                      <a href="">
-                        <img src="url_for('static',filename='images/thumbs/02.jpg')" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                </div>    
-                <div>
-                  <a href="">
-                        <img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
-                        <h3>Caption... blah blah blah</h3>
-                      </a>
-                </div>  
+				<!-- Thumbnails -->
+				<section class="thumbnails">
 
-							</section>
+					<div>
+						<a href="#">
+							<img src="{{url_for('static',filename='images/thumbs/01.jpg')}}" alt="" />
+							<h3>Caption... blah blah blah</h3>
+						</a>
 
-					</section>
+						<a href="#">
+							<img src="{{url_for('static',filename='images/thumbs/02.jpg')}}" alt="" />
+							<h3>Caption... blah blah blah</h3>
+						</a>
+					</div>    
+					
+					<div>
+						<a href="#">
+							<img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
+							<h3>Caption... blah blah blah</h3>
+						</a>
+					</div>  
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p>&copy; MEET's (fake) Instagram. No rights reserved. 
-					</footer>
+								{% for post in posts %}
 
-			</div>
+								<div>
+                <a href="">
+                	<img src="{{post}}" alt="" />
+                	<h3> {{posts[post]}}</h3>
+                </a>
+              </div>
+              
+                {% endfor %}
+
+
+				</section>
+
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<p>&copy; MEET's (fake) Instagram. No rights reserved.</p>
+			</footer>
+
+		</div>
 
 		<!-- Scripts -->
-			<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
-			<script src="static/js/jquery.poptrox.min.js"></script>
-			<script src="static/js/skel.min.js"></script>
-			<script src="static/js/main.js"></script>
+		<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+		<script src="{{url_for('static',filename='js/jquery.poptrox.min.js')}}"></script>
+		<script src="{{url_for('static',filename='js/skel.min.js')}}"></script>
+		<script src="{{url_for('static',filename='js/main.js')}}"></script>
 
 	</body>
 </html>
